@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esto es para ti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <section id="intro">
+    <button id="startBtn">Esto es para ti<span class="heart">&lt;3</span></button>
+  </section>
+
+  <section id="gallery" aria-hidden="true">
+    <canvas id="paintCanvas"></canvas>
+
+    <div id="caption">
+      <p id="captionText"></p>
+    </div>
+
+    <div id="progressDots"></div>
+
+    <div id="finale">
+      <h1>Algo que siempre sera tuyo<span class="heart">&lt;3</span></h1>
+      <p class="finaleSub">— pintado con cariño, una noche estrellada a la vez</p>
+    </div>
+  </section>
+
+  <audio id="bgAudio" src="golden-hour.mp3" preload="auto" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

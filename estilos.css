@@ -1,0 +1,175 @@
+:root {
+  --cream: #f4ead9;
+  --gold: #e8c547;
+  --night: #05070f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: var(--night);
+  overflow: hidden;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* ---------- INTRO ---------- */
+
+#intro {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  z-index: 10;
+  transition: opacity 2.2s ease;
+}
+
+#intro.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#startBtn {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  color: var(--cream);
+  background: transparent;
+  border: 1px solid rgba(232, 197, 71, 0.45);
+  border-radius: 999px;
+  padding: 0.9em 1.6em;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  box-shadow: 0 0 40px rgba(232, 197, 71, 0.08);
+  transition: box-shadow 0.6s ease, border-color 0.6s ease, transform 0.3s ease;
+  animation: glow 3.2s ease-in-out infinite;
+}
+
+#startBtn:hover {
+  transform: scale(1.04);
+  border-color: rgba(232, 197, 71, 0.9);
+  box-shadow: 0 0 60px rgba(232, 197, 71, 0.25);
+}
+
+#startBtn .heart {
+  color: #e8738a;
+  font-family: 'Great Vibes', cursive;
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 25px rgba(232, 197, 71, 0.08); }
+  50%      { box-shadow: 0 0 55px rgba(232, 197, 71, 0.22); }
+}
+
+/* ---------- GALLERY ---------- */
+
+#gallery {
+  position: fixed;
+  inset: 0;
+  background: #000;
+}
+
+#paintCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 7%;
+  text-align: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+#captionText {
+  display: inline-block;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.4rem, 3.2vw, 2.3rem);
+  color: var(--cream);
+  text-shadow: 0 0 18px rgba(0,0,0,0.85), 0 0 2px rgba(0,0,0,0.9);
+  opacity: 0;
+  transition: opacity 1.8s ease;
+}
+
+#captionText.show {
+  opacity: 0.92;
+}
+
+#progressDots {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(244, 234, 217, 0.25);
+  transition: background 0.6s ease, transform 0.6s ease;
+}
+
+.dot.active {
+  background: var(--gold);
+  transform: scale(1.3);
+}
+
+#finale {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(ellipse at center, rgba(5,7,15,0.2) 0%, rgba(5,7,15,0.96) 75%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 2.5s ease;
+  z-index: 4;
+  padding: 0 6vw;
+}
+
+#finale.show {
+  opacity: 1;
+}
+
+#finale h1 {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  color: var(--cream);
+  text-shadow: 0 0 30px rgba(232,197,71,0.35);
+}
+
+#finale h1 .heart {
+  color: #e8738a;
+}
+
+.finaleSub {
+  margin-top: 0.8em;
+  font-style: italic;
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  color: rgba(244, 234, 217, 0.65);
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 560px) {
+  #startBtn { padding: 0.8em 1.2em; }
+}
